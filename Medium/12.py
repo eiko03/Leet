@@ -3,12 +3,12 @@
 class Solution:
 
     def takeClosest(self ,myNumber, myList):
-        closes t =[i for i in  myList if i  <= myNumber]
+        closest =[i for i in  myList if i  <= myNumber]
         return max(closest)
 
     def intToRoman(self, num: int) -> str:
-        so l =""
-        hashma p ={
+        sol =""
+        hashmap ={
             1: "I",
             4 :"IV",
             5: "V",
@@ -24,17 +24,17 @@ class Solution:
             1000: "M"
         }
 
-        while nu m >0:
-            re s =self.takeClosest(num, list(hashmap.keys()))
+        while num >0:
+            res =self.takeClosest(num, list(hashmap.keys()))
             if num == res:
-                so l+= hashmap[res]
-                nu m =0
-            elif nu m %res == 0:
-                so l+ =(int(num / res )* hashmap[res])
-                nu m =0
+                sol+= hashmap[res]
+                num =0
+            elif num %res == 0:
+                sol += (int(num / res )* hashmap[res])
+                num =0
             else:
-                so l+= hashmap[res]
-            nu m- =res
+                sol+= hashmap[res]
+            num -= res
 
         return sol
 
