@@ -24,8 +24,12 @@ def bfs(graph, source):
         for nodes in graph[poped]:
             stack.append(nodes)
     
-
+def dfs_rec(graph, source):
+    print(source)
+    for node in graph[source]:
+        dfs_rec(graph, node)
     
         
 dfs(graph , 'a')
 bfs(graph , 'a')
+dfs_rec(graph , 'a')
